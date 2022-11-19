@@ -5,3 +5,4 @@ require("vish.core.colorscheme")
 
 require("vish.plugins.comment")
 require("vish.plugins.nvim-tree")
+require("vish.plugins.lualine")

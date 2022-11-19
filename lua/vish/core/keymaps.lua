@@ -26,3 +26,6 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
 -- PLUGIN KEYMAPS --
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+
+  -- nvim tree
+keymap.set("n", "<leader>e", ":NvimTreeToggle<Cr>")
