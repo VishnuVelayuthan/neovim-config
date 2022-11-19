@@ -7,3 +7,5 @@ require("vish.plugins.comment")
 require("vish.plugins.nvim-tree")
 require("vish.plugins.lualine")
 require("vish.plugins.telescope")
+require("vish.plugins.nvim-cmp")
+
