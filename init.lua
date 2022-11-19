@@ -3,3 +3,5 @@ require("vish.core.options")
 require("vish.core.keymaps")
 require("vish.core.colorscheme")
 
+require("vish.plugins.comment")
+require("vish.plugins.nvim-tree")

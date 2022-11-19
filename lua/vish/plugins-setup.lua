@@ -27,10 +27,34 @@ end
 
 return packer.startup(function(use)
 
+    ------- ADD PLUGINS HERE ------- 
+    
+    -- Plugin manager
     use("wbthomason/packer.nvim")
 
-    use("bluz71/vim-nightfly-guicolors") -- color scheme
+    -- Lua functions that plugins use
+    use("nvim-lua/plenary.nvim")
+    
+    -- Color scheme 
+    use("bluz71/vim-nightfly-guicolors") 
 
+    -- TMUX and split window nav
+    use("christoomey/vim-tmux-navigator")
+
+    -- Maximizes and restores current window
+    use("szw/vim-maximizer")
+
+    -- Surrounds motion with character (ys{m}{c})
+    use("tpope/vim-surround")
+
+    -- Replaces text with copy register (gr{m})
+    use("vim-scripts/ReplaceWithRegister")
+
+    -- Commenting with (gc{mo})
+    use("numToStr/Comment.nvim")
+
+    -- File explorer
+    use("nvim-tree/nvim-tree.lua")
 
     if packer_bootstrap then
         require("packer").sync()
