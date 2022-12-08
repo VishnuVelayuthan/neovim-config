@@ -8,4 +8,7 @@ require("vish.plugins.nvim-tree")
 require("vish.plugins.lualine")
 require("vish.plugins.telescope")
 require("vish.plugins.nvim-cmp")
+require("vish.plugins.lsp.mason")
+require("vish.plugins.lsp.lspsaga")
+require("vish.plugins.lsp.lspconfig")
 

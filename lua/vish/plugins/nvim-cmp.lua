@@ -8,6 +8,11 @@ if not luasnip_status then
     return
 end
 
+local lspkind_status, lspkind = pcall(require, "lspkind")
+if not lspkind_status then 
+    return
+end
+
 -- load the friendly snippets
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -26,11 +31,18 @@ cmp.setup({
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
+        { name = "nvim_lsp" }, -- lsp
         { name = "luasnip" }, -- snippetes
         { name = "buffer" }, -- text within curr buffer
         { name = "path" }, -- file system paths
     }),
+    formatting = {
+        format = lspkind.cmp_format({
+            maxwidth = 50,
+            ellipsis_char = "...",
+        }),
+    },
 })
