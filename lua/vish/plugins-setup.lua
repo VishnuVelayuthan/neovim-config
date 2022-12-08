@@ -76,7 +76,7 @@ return packer.startup(function(use)
     use("saadparwaiz1/cmp_luasnip")
     use("rafamadriz/friendly-snippets")
 
-    -- Managing and installing LSP servers
+    -- Managing and installing LSP servers, formatters and linters
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
 
@@ -86,6 +86,22 @@ return packer.startup(function(use)
     use({ "glepnir/lspsaga.nvim", branch = "main" })
     use("jose-elias-alvarez/typescript.nvim")
     use("onsails/lspkind.nvim")
+
+    -- Linting and formatting 
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("jayp0521/mason-null-ls.nvim")
+
+    -- TreeSitter
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = function()
+            require("nvim-treesitter.install").update({ with_sync = true })
+        end,
+    })
+
+    -- Autoclosing
+    use("windwp/nvim-autopairs")
+    -- use("windwp/nvim-ts-autotag")
 
     if packer_bootstrap then
         require("packer").sync()

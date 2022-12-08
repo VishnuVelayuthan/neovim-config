@@ -12,3 +12,4 @@ require("vish.plugins.lsp.mason")
 require("vish.plugins.lsp.lspsaga")
 require("vish.plugins.lsp.lspconfig")
 
+require("vish.plugins.lsp.null-ls")
