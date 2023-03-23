@@ -16,6 +16,7 @@ if not typescript_setup then
    return
 end
 
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -87,6 +88,19 @@ lspconfig["emmet_ls"].setup {
    capabilities = capabilities,
    on_attach = on_attach,
    filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+}
+
+lspconfig["ccls"].setup {
+   init_options = {
+      compilationDatabaseDirectory = "build",
+      index = {
+         threads = 0,
+      },
+      clang = {
+         excludeArgs = { "-frounding-math" },
+      },
+   },
+   filetypes = { "cpp", "c" },
 }
 
 -- configure lua server (with special settings)

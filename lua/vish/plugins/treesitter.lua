@@ -21,7 +21,7 @@ treesitter.setup {
       "lua",
       "vim",
       "gitignore",
-      "cpp",
+      "cpp", "c",
       "cmake",
       "java",
       "python",

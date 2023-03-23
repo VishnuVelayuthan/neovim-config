@@ -18,8 +18,7 @@ mason.setup()
 mason_lspconfig.setup {
    -- All the different language protocols go here
    ensure_installed = {
-      "clangd", -- c++
-
+      "ccls", -- c++
       "jdtls", -- java
 
       "cssls", -- css
@@ -27,7 +26,6 @@ mason_lspconfig.setup {
       "tsserver", -- javascript
       "tailwindcss",
 
-      "sumneko_lua", -- lua
    },
 }
 

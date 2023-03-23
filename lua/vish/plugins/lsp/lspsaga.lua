@@ -3,6 +3,7 @@ if not saga_status then
     return
 end
 
+--[[
 saga.init_lsp_saga({
   -- keybinds for navigation in lspsaga window
   move_in_saga = { prev = "<C-k>", next = "<C-j>" },
@@ -15,3 +16,5 @@ saga.init_lsp_saga({
     edit = "<CR>",
   },
 })
+--]]
+

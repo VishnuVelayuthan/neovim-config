@@ -88,14 +88,16 @@ return packer.startup(function(use)
 
    -- Linting and formatting
    use "jose-elias-alvarez/null-ls.nvim"
-   use "jayp0521/mason-null-ls.nvim"
+   use "jayp0521/mason-null-ls.nvim" 
 
    -- TreeSitter
    use {
       "nvim-treesitter/nvim-treesitter",
       run = function()
          require("nvim-treesitter.install").update { with_sync = true }
+         ts_update()
       end,
+
    }
 
    -- Autoclosing
